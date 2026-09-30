@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SpendWise - Dart DOM</title>
+
+    <link rel="stylesheet"
+          href="styles.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+            💰 Spend<span>Wise</span>
+        </div>
+
+        <div class="tagline">
+            Smart Expense Tracker
+        </div>
+
+    </header>
+
+
+    <!-- DASHBOARD -->
+
+    <section class="dashboard">
+
+        <div class="stat-card">
+
+            <div class="stat-label">
+                TOTAL SPENDING
+            </div>
+
+            <div id="totalAmount"
+                 class="stat-value">
+                ₹0
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-label">
+                TOTAL EXPENSES
+            </div>
+
+            <div id="expenseCount"
+                 class="stat-value">
+                0
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-label">
+                CLEARED EXPENSES
+            </div>
+
+            <div id="clearedCount"
+                 class="stat-value">
+                0
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ADD EXPENSE -->
+
+    <section class="panel">
+
+        <h2 class="panel-title">
+            ➕ Add New Expense
+        </h2>
+
+
+        <div class="form-grid">
+
+
+            <div class="input-group">
+
+                <label for="expenseName">
+                    Expense Name
+                </label>
+
+                <input
+                        id="expenseName"
+                        type="text"
+                        placeholder="e.g. Lunch">
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="expenseAmount">
+                    Amount
+                </label>
+
+                <input
+                        id="expenseAmount"
+                        type="number"
+                        placeholder="₹ Amount">
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="expenseCategory">
+                    Category
+                </label>
+
+                <select id="expenseCategory">
+
+                    <option value="Food">
+                        🍔 Food
+                    </option>
+
+                    <option value="Travel">
+                        🚕 Travel
+                    </option>
+
+                    <option value="Shopping">
+                        🛍️ Shopping
+                    </option>
+
+                    <option value="Bills">
+                        💡 Bills
+                    </option>
+
+                    <option value="Entertainment">
+                        🎮 Entertainment
+                    </option>
+
+                    <option value="Other">
+                        📦 Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button id="addButton"
+                    class="add-button">
+
+                + Add Expense
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPENSE LIST -->
+
+    <section class="panel">
+
+        <h2 class="panel-title">
+            📋 Your Expenses
+        </h2>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+            <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="🔍 Search expenses...">
+
+        </div>
+
+
+        <!-- FILTER BUTTONS -->
+
+        <div class="filters">
+
+            <button
+                    class="filter-button active"
+                    data-category="All">
+
+                All
+
+            </button>
+
+            <button
+                    class="filter-button"
+                    data-category="Food">
+
+                🍔 Food
+
+            </button>
+
+            <button
+                    class="filter-button"
+                    data-category="Travel">
+
+                🚕 Travel
+
+            </button>
+
+            <button
+                    class="filter-button"
+                    data-category="Shopping">
+
+                🛍️ Shopping
+
+            </button>
+
+            <button
+                    class="filter-button"
+                    data-category="Bills">
+
+                💡 Bills
+
+            </button>
+
+            <button
+                    class="filter-button"
+                    data-category="Entertainment">
+
+                🎮 Entertainment
+
+            </button>
+
+            <button
+                    class="filter-button"
+                    data-category="Other">
+
+                📦 Other
+
+            </button>
+
+        </div>
+
+
+        <!-- DYNAMIC EXPENSE CONTAINER -->
+
+        <div id="expenseList"
+             class="expense-list">
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORY BREAKDOWN -->
+
+    <section class="panel">
+
+        <h2 class="panel-title">
+            📊 Spending Breakdown
+        </h2>
+
+        <div id="categoryBreakdown">
+
+        </div>
+
+    </section>
+
+
+    <!-- DYNAMIC MESSAGE -->
+
+    <div id="message"
+         class="message">
+
+        Expense added!
+
+    </div>
+
+
+</div>
+
+
+<script defer
+        src="main.dart.js">
+</script>
+
+</body>
+
+</html>
